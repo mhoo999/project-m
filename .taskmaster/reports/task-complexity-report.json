@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "generatedAt": "2025-06-05T08:25:29.121Z",
+    "tasksAnalyzed": 12,
+    "totalTasks": 12,
+    "analysisCount": 12,
+    "thresholdScore": 5,
+    "projectName": "Taskmaster",
+    "usedResearch": true
+  },
+  "complexityAnalysis": [
+    {
+      "taskId": 1,
+      "taskTitle": "위치 정보 서비스 구현",
+      "complexityScore": 6,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down the geolocation service implementation into subtasks including permission handling, coordinate retrieval, error handling, caching mechanism, and security considerations. For each subtask, provide implementation details and testing approach.",
+      "reasoning": "This task involves working with browser permissions, asynchronous API calls, error handling, and security considerations. The Geolocation API requires secure contexts (HTTPS), has privacy implications, and needs fallback mechanisms. The caching requirement adds state management complexity."
+    },
+    {
+      "taskId": 2,
+      "taskTitle": "지도 API 연동",
+      "complexityScore": 7,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Divide the map API integration task into subtasks covering API key setup, map initialization, map instance management, user location centering, map controls implementation, and context creation for sharing the map instance.",
+      "reasoning": "Integrating third-party map APIs requires managing API keys, handling script loading, creating and maintaining map instances, and implementing various map controls. The component needs to handle lifecycle events properly and manage external script loading."
+    },
+    {
+      "taskId": 3,
+      "taskTitle": "반경 선택 UI 구현",
+      "complexityScore": 4,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down the radius selection UI implementation into subtasks for creating the visual components (slider and buttons), implementing the state management logic, and connecting the radius changes to the map view.",
+      "reasoning": "This is a relatively straightforward UI component with both slider and button interfaces. It requires state management and integration with the map component, but the complexity is moderate compared to other tasks."
+    },
+    {
+      "taskId": 4,
+      "taskTitle": "식당 데이터 서비스 구현",
+      "complexityScore": 7,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Divide the restaurant data service implementation into subtasks covering data model definition, sample data creation, filtering logic implementation (including the Haversine formula for distance calculation), category filtering, and preparation for external API integration.",
+      "reasoning": "This service requires implementing complex filtering logic including distance calculations using the Haversine formula. It needs to handle multiple filter criteria simultaneously and prepare for future external API integration. The sample data creation also requires significant effort."
+    },
+    {
+      "taskId": 5,
+      "taskTitle": "지도에 식당 마커 표시",
+      "complexityScore": 6,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Break down the restaurant marker implementation into subtasks for creating markers based on restaurant data, implementing custom marker icons by category, creating interactive tooltips/info windows, and handling marker click events.",
+      "reasoning": "This task involves deep integration with the map API to create, position, and style markers. It requires implementing interactive elements (tooltips) and handling user interactions. The markers need to be efficiently managed as restaurants are filtered."
+    },
+    {
+      "taskId": 6,
+      "taskTitle": "식당 리스트 컴포넌트 구현",
+      "complexityScore": 5,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Divide the restaurant list component implementation into subtasks for creating the basic list structure, implementing sorting functionality, handling restaurant selection and highlighting, and ensuring responsive design for different screen sizes.",
+      "reasoning": "This component requires creating a scrollable, interactive list with sorting capabilities. It needs to handle selection state and coordinate with the map component. The responsive design requirements add some complexity."
+    },
+    {
+      "taskId": 7,
+      "taskTitle": "카테고리 필터 컴포넌트 구현",
+      "complexityScore": 4,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down the category filter component implementation into subtasks for retrieving and displaying available categories, implementing single/multiple category selection logic, and connecting the filter to the restaurant list and map markers.",
+      "reasoning": "This is a relatively straightforward filter component with moderate complexity. It requires state management for selected categories and integration with other components, but the UI and logic are simpler than other tasks."
+    },
+    {
+      "taskId": 8,
+      "taskTitle": "랜덤 식당 추천 기능 구현",
+      "complexityScore": 5,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Divide the random restaurant recommendation feature into subtasks for creating the UI component, implementing the category-based filtering logic, developing the random selection algorithm with animation effects, and integrating with the map component for highlighting selected restaurants.",
+      "reasoning": "This feature combines UI animation with filtering logic and random selection. The animation sequence adds complexity, and it needs to integrate with both the category filter and map components."
+    },
+    {
+      "taskId": 9,
+      "taskTitle": "메인 레이아웃 및 반응형 디자인",
+      "complexityScore": 8,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Break down the main layout implementation into subtasks for creating the responsive layout structure, implementing desktop split view, developing mobile tabbed/stacked layout, creating the header component, integrating all child components, and managing the overall application state.",
+      "reasoning": "This is a complex task that involves integrating all other components and implementing responsive layouts for different devices. It requires managing the overall application state and coordinating between multiple components. The mobile/desktop adaptation adds significant complexity."
+    },
+    {
+      "taskId": 10,
+      "taskTitle": "에러 처리 및 로딩 상태 구현",
+      "complexityScore": 6,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Divide the error handling and loading state implementation into subtasks for creating reusable loading indicators, implementing error boundary components, adding retry mechanisms, developing fallback UIs, and handling specific error cases like location permission denial.",
+      "reasoning": "This task requires implementing robust error handling throughout the application, including React error boundaries and specific error cases. The loading indicators and retry mechanisms add complexity, and it needs to be integrated across multiple components."
+    },
+    {
+      "taskId": 11,
+      "taskTitle": "네이버 지도 외부 연결 기능",
+      "complexityScore": 3,
+      "recommendedSubtasks": 2,
+      "expansionPrompt": "Break down the Naver Maps external linking feature into subtasks for creating the URL generation utility function and implementing the link/button components with proper event handling.",
+      "reasoning": "This is a relatively simple feature that involves creating URLs and implementing link components. The main complexity comes from handling different URL formats and preventing event propagation, but overall it's straightforward."
+    },
+    {
+      "taskId": 12,
+      "taskTitle": "앱 배포 및 환경설정",
+      "complexityScore": 5,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Divide the deployment and configuration task into subtasks for setting up environment variables and API key management, creating deployment configuration files, implementing build optimization, and configuring continuous deployment from the repository.",
+      "reasoning": "Deployment involves several configuration steps including environment variable management, build optimization, and continuous deployment setup. Securing API keys properly adds complexity, but these are standard deployment procedures."
+    }
+  ]
+}
