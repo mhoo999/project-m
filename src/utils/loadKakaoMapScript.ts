@@ -2,12 +2,20 @@ const KAKAO_MAP_KEY = import.meta.env.VITE_KAKAO_MAP_KEY;
 
 export function loadKakaoMapScript(): Promise<void> {
   return new Promise((resolve, reject) => {
-    if (document.getElementById('kakao-map-sdk')) {
-      resolve(); // 이미 로드됨
+    // 이미 kakao 객체가 있으면 바로 resolve
+    if (window.kakao && window.kakao.maps) {
+      resolve();
+      return;
+    }
+    const scriptId = 'kakao-map-sdk';
+    const existingScript = document.getElementById(scriptId) as HTMLScriptElement | null;
+    if (existingScript) {
+      // 이미 script가 있지만 window.kakao가 아직 undefined라면 load 이벤트로 resolve
+      existingScript.addEventListener('load', () => resolve());
       return;
     }
     const script = document.createElement('script');
-    script.id = 'kakao-map-sdk';
+    script.id = scriptId;
     script.async = true;
     script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_MAP_KEY}&autoload=false`;
     script.onload = () => resolve();
